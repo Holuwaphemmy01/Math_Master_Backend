@@ -7,4 +7,13 @@ export default class UserRepository {
     async create(user: User): Promise<User> {
         return this.repository.save(user);
     }
+
+    async findByUsername(username: string): Promise<User | null> {
+    return this.repository.findOne({ where: { username } });
+    }
+
+    async getAll(): Promise<User[]> {
+    return this.repository.find();
+    }
+
 }

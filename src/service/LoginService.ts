@@ -44,8 +44,9 @@ export default class LoginService{
                 this.response.passed=findByUsernameResult.passed;
                 this.response.failed=findByUsernameResult.failed;
                 return this.response;      
-       
         }
+
+        
 
 
     }

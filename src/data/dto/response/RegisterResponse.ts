@@ -6,5 +6,4 @@ export default class RegisterResponse {
     public gender: string | undefined;
     public username: string | undefined;
 
-
 }

@@ -29,5 +29,11 @@ export  class User {
     @Column()
     username!: string;
 
+    @Column()
+    passed!: number;
+
+    @Column()
+    failed!: number;
+
 
 }

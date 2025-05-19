@@ -6,7 +6,7 @@ import { Router, Request, Response } from 'express';
 
 export default class LoginController{
     private loginService:LoginService;
-    private router:Router;
+    public router:Router;
 
     constructor(){
         this.loginService = new LoginService();

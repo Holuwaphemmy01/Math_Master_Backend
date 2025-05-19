@@ -24,7 +24,7 @@ export default class LoginService{
         this.response = new LoginResponse();
     }
     async login (loginDto: LoginRequest): Promise<LoginResponse>{
-        if (!loginDto.email || !loginDto.username) throw new Error("Email or Username cannot be empty");
+        if (!loginDto.username) throw new Error("Email or Username cannot be empty");
         if (!loginDto.password || loginDto.password.length < 6 )("Password must be at least 6 characters");
 
         if (loginDto.email) {
@@ -46,7 +46,7 @@ export default class LoginService{
                 return this.response;      
         }
 
-        
+
 
 
     }

@@ -42,6 +42,8 @@ export default class RegisterService {
         this.newUser.age = registerDto.age;
         this.newUser.school = registerDto.school;
         this.newUser.language = registerDto.language;
+        this.newUser.passed=0;
+        this.newUser.failed=0;
 
         const response = await this.userRepo.create(this.newUser);  
         const result = await this.userRepo.getAll();

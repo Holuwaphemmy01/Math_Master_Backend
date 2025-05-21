@@ -25,12 +25,13 @@ A student named "${explainQuestionDto.username}" aged ${age} is asking this math
 Explain the question step-by-step like a real teacher, in the language: ${dbResponse.language}.
 Use examples from Lagos markets, farming, or everyday life that "${explainQuestionDto.username}" will understand.
 Include their name in your response.
-Make sure to respond only in ${dbResponse.language}, no English.
+Make sure to respond only in ${dbResponse.language}.
+The explanation does not include the answer.
 `.trim();
 
     try {
       const response = await axios.post(
-        process.env.GEMINI_API_URL!,
+       'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent',
         {
           contents: [
             {

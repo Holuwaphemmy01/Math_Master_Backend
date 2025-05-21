@@ -6,6 +6,7 @@ import LoginController from './controller/LoginController';
 import FetchQuestionController from './controller/FetchQuestionController';
 import ExplainQuestionController from './controller/ExplainQuestionController';
 import CorrectAnswerController from './controller/CorrectAnswerController';
+import ExplainAndAnswerController from './controller/ExplainAndAnswerController';
 
 
 const app = express();
@@ -33,6 +34,9 @@ AppDataSource.initialize()
 
     const correctAnswerController = new CorrectAnswerController();
     app.use('/checkAnswer',correctAnswerController.router)
+
+    const explainAndAnswerController = new ExplainAndAnswerController();
+    app.use('/explainAndExplain', explainAndAnswerController.router);
 
     app.listen(3000, () => {
       console.log('Server running on http://localhost:3000');

@@ -1,6 +1,5 @@
-class ExplainQuestionRequest{
+export default class ExplainQuestionRequest{
     question!: string;
-    age!: number;
-    language!: string;
-
+    username!: string;
+   
 }

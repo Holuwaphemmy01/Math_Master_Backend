@@ -7,19 +7,12 @@ import dotenv from 'dotenv'
 import axios, { AxiosError } from 'axios';
 
 
-
-
-
-
-
-
-
 dotenv.config();
 export default class FetchQuestionService{
 
     private userRepository: UserRepository;
     private response: FetchQuestionResponse;
-    private key = process.env.GEMINI_API_KEY;
+   
     
 
     constructor(){

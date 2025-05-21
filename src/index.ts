@@ -73,7 +73,7 @@ AppDataSource.initialize()
   .then(() => {
     console.log('Connected to PostgreSQL');
 
-    const allowedOrigins = ['http://localhost:5173/', 'https://math-master-frontend-beryl.vercel.app/'];
+    const allowedOrigins = ['http://localhost:5173', 'https://math-master-frontend-beryl.vercel.app'];
 
 app.use(cors({
   origin: (origin, callback) => {

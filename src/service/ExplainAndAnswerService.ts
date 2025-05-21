@@ -27,8 +27,8 @@ Explain how to solve the question step-by-step, as you would teach in a Lagos cl
 Use everyday examples from Nigerian life — farming, trading, or school activities.
 Mention "${explainAnswerDto.username}" by name during your explanation.
 Finally, give the correct final answer clearly.
-Make sure everything is in ${dbResponse.language}.
-Do not write anything in English — only ${dbResponse.language}.
+Make sure everything is in ${explainAnswerDto.language}.
+Do not write anything in English — only ${explainAnswerDto.language}.
 `.trim();
 
     try {

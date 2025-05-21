@@ -57,11 +57,4 @@ Make sure to respond only in ${dbResponse.language}, no English.
   }
     
 
-
-
-        // return "";
-    
-
-
-
 }

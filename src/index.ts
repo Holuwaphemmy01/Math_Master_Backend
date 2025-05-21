@@ -63,6 +63,8 @@ import FetchQuestionController from './controller/FetchQuestionController';
 import ExplainQuestionController from './controller/ExplainQuestionController';
 import CorrectAnswerController from './controller/CorrectAnswerController';
 import ExplainAndAnswerController from './controller/ExplainAndAnswerController';
+import cors from 'cors';
+
 
 const app = express();
 app.use(express.json());
@@ -70,6 +72,20 @@ app.use(express.json());
 AppDataSource.initialize()
   .then(() => {
     console.log('Connected to PostgreSQL');
+
+    const allowedOrigins = ['http://localhost:5173/', 'https://math-master-frontend-beryl.vercel.app/'];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
+
+
 
     app.get('/', (req, res) => {
       res.send('Welcome to MathMaster Backend!');

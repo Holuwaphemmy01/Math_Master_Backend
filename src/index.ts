@@ -3,6 +3,7 @@ import express from 'express';
 import { AppDataSource } from './data-source';
 import RegisterController from './controller/RegisterController';
 import LoginController from './controller/LoginController';
+import FetchQuestionController from './controller/FetchQuestionController';
 
 const app = express();
 app.use(express.json());
@@ -20,6 +21,9 @@ AppDataSource.initialize()
 
     const loginController = new LoginController();
     app.use('/login', loginController.router);
+
+    const fetchQuestionController = new FetchQuestionController();
+    app.use('/fetchQuestion', fetchQuestionController.router);
 
     app.listen(3000, () => {
       console.log('Server running on http://localhost:3000');

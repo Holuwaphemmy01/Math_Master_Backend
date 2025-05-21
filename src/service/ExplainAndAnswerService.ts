@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 
-export default class ExplainQuestionService{
+export default class ExplainAndAnswerService{
      private userRepository: UserRepository;
 
      constructor(){
@@ -55,7 +55,7 @@ Do not write anything in English — only ${dbResponse.language}.
       return response.data.candidates[0].content.parts[0].text.trim();
     } catch (error: any) {
       console.error('Error calling Gemini:', error.response?.data || error.message);
-      throw new Error('Failed to get question from AI');
+      throw new Error('Failed to get question from King Ade');
     }
   }
     

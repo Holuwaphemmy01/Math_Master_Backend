@@ -3,6 +3,7 @@ import CorrectAnswerRequest from "../data/dto/request/CorrectAnswerRequest";
 import UserRepository from "../repository/UserRepository";
 import { AppDataSource } from "../data-source";
 import { User } from "../data/model/User";
+import { response } from "express";
 
 export default class CorrectAnswerService{
     private userRepository: UserRepository;
@@ -52,7 +53,7 @@ Answer:
       throw new Error('Failed to get question from AI');
     }
 
-
+    console.log("This is the response from gemini "+response);
     console.log("This is the gemini result "+geminiResult);
 
     if(geminiResult===checkAnswerRequest.answer) return `${checkAnswerRequest.username} you are a genius`;

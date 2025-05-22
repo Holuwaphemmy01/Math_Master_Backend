@@ -52,6 +52,9 @@ Answer:
       throw new Error('Failed to get question from AI');
     }
 
+
+    console.log("This is the gemini result "+geminiResult);
+
     if(geminiResult===checkAnswerRequest.answer) return `${checkAnswerRequest.username} you are a genius`;
     else return `${checkAnswerRequest.username} you failed`;
 
